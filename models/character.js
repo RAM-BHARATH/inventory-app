@@ -13,4 +13,4 @@ CharacterSchema
     return '/inventory/character/'+this._id;
 })
 
-module.exports = mongoose.Model('Character', CharacterSchema);
+module.exports = mongoose.model('Character', CharacterSchema);
