@@ -3,8 +3,9 @@ const Schema = mongoose.Schema
 
 const CharacterSchema = new Schema({
     name: { type: String, required: true },
-    category: { type: Schema.Types.ObjectId, ref: 'Category' },
-    description: { type:String }
+    description: { type:String, maxLength:1500 },
+    image: { type: Schema.Types.ObjectId, required: true },
+    category: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
 })
 
 CharacterSchema

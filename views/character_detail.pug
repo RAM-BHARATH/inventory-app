@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+    h1= title
+    ul
+        each val, index in character 
+            if(typeof val !='function')
+                li #{index}, #{val}
+        //- li Image: #{character.image}
+        li= character.description
+        li= character.category
+        p= character
+    //- p= response
+    //- ul
+    //-     each val, index in image
+    //-         if(typeof val !='function')
+    //-             li #{index}
+    //- p= image
+    img(src='/image/'+image.filename)
+
+    h1 Products
+    ul 
+        each product in products
+            li
+                a(href=product.url) #{product.name}
+        

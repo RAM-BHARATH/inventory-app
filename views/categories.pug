@@ -1,0 +1,17 @@
+extend layout 
+
+block content
+    .container 
+        .row 
+            h1= title
+    .container 
+        .row
+            if error 
+                p Error while fetching data 
+            else 
+                ul 
+                    p Available Categories
+                    .container
+                        for category in category_list 
+                            li
+                                a(href=category.url) #{category.name}

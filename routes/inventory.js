@@ -6,9 +6,11 @@ const category_controller = require('../controllers/categoryController');
 const character_controller = require('../controllers/characterController');
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Toy Store' });
-});
+router.get('/', product_controller.index);
+
+router.get('/products', product_controller.product_list_get);
+
+router.get('/product/:id', product_controller.product_detail_get);
 
 router.get('/product/create', product_controller.product_create_get);
 
@@ -18,9 +20,13 @@ router.get('/product/:id/delete', product_controller.product_delete_get);
 
 router.post('/product/:id/delete', product_controller.product_delete_post);
 
-router.get('/product/:id/update',product_controller.product_update_post)
+router.get('/product/:id/update',product_controller.product_update_post);
 
-router.post('/product/:id/update',product_controller.product_update_post)
+router.post('/product/:id/update',product_controller.product_update_post);
+
+router.get('/categories', category_controller.category_list_get);
+
+router.get('/category/:id', category_controller.category_detail_get);
 
 router.get('/category/create', category_controller.category_create_get);
 
@@ -34,6 +40,10 @@ router.get('/category/:id/update', category_controller.category_update_get);
 
 router.post('/category/:id/update', category_controller.category_update_post);
 
+router.get('/characters', character_controller.character_list_get);
+
+router.get('/character/:id', character_controller.character_detail_get);
+
 router.get('/character/create', character_controller.character_create_get);
 
 router.post('/character/create', character_controller.character_create_post);
@@ -46,4 +56,7 @@ router.get('/character/:id/update', character_controller.character_update_get);
 
 router.post('/character/:id/update', character_controller.character_update_post);
 
+router.get('/*', function(req, res){
+  res.render('404', {title:'404'});
+})
 module.exports = router;

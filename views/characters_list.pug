@@ -1,0 +1,17 @@
+extend layout 
+
+block content
+    .container 
+        .row 
+            h1= title
+    .container 
+        .row
+            if error 
+                p Error while fetching data 
+            else 
+                ul 
+                    p Available Characters
+                    .container
+                        for character in character_list 
+                            li
+                                a(href=character.url) #{character.name}

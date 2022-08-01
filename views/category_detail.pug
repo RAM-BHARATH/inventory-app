@@ -1,0 +1,52 @@
+extend layout 
+
+block content
+    .container 
+        .row 
+            h1= title
+    .container 
+        .row
+            if error 
+                p Error while fetching data 
+            else 
+                ul 
+                    p= category.description
+    .container 
+        .row 
+            h2 Some characters in this category
+        .row
+            if error 
+                p Error while fetching data 
+            else 
+                .container
+                    if(characters===null || characters.length===0)
+                        .row
+                            p No characters so far
+                        .row
+                            p
+                                a(href="/inventory/character/create") Add new character 
+                    else 
+                        ul 
+                            for character in characters 
+                                li 
+                                    a(href=character.url) #{character.name}
+                    
+    .container 
+        .row 
+            h2 Some products in this category
+        .row
+            if error 
+                p Error while fetching data 
+            else 
+                .container
+                    if(products===null || products.length===0)
+                        .row 
+                            p No products so far 
+                        .row 
+                            p 
+                                a(href="/inventory/product/create") Add new product
+                    else
+                        ul 
+                            for product in products 
+                                li 
+                                    a(href=product.url) #{product.name}

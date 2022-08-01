@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div(class='container')
+    div(class='row')
+      h1= title
+    .row.text-center.col-md-6
+      p Welcome to #{title}
+    
+    if error 
+      p Error getting data 
+    else 
+      p Data from inventory
+
+      ul 
+        a(href='/inventory/categories')
+          li #[strong Categories:] !{data.category_count}
+        a(href='/inventory/characters')
+          li #[strong Characters:] !{data.character_count}
+        a(href='/inventory/products')
+          li #[strong Products:] !{data.product_count}

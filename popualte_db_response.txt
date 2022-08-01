@@ -1,0 +1,269 @@
+// Response while seeding data - Not important
+This script populates some test books, authors, genres and bookinstances to your database. Specified database as argument - e.g.: populatedb mongodb+srv://cooluser:coolpassword@cluster0.a9azn.mongodb.net/local_library?retryWrites=true
+New Category: {
+  name: 'DC Comics',
+  description: 'DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, Wonder Woman, and Aquaman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.',
+  _id: new ObjectId("62e4dba584e80c4431792176"),
+  __v: 0
+}
+New Category: {
+  name: 'Marvel',
+  description: 'Marvel Studios, LLC[4] (originally known as Marvel Films from 1993 to 1996) is an American film and television production company that is a subsidiary of Walt Disney Studios, a division of the Walt Disney Company. Marvel Studios is known for the production of the Marvel Cinematic Universe films, based on characters that appear in Marvel Comics publications.',
+  _id: new ObjectId("62e4dba784e80c4431792179"),
+  __v: 0
+}
+New Category: {
+  name: 'Transformers',
+  description: 'Transformers is a series of American science fiction action films based on the Transformers franchise, which began in the 1980s.',
+  _id: new ObjectId("62e4dba884e80c443179217b"),
+  __v: 0
+}
+New Category: {
+  name: 'Harry Potter',
+  description: "Harry Potter is a film series based on the eponymous novels by J. K. Rowling. The series is distributed by Warner Bros. and consists of eight fantasy films, beginning with Harry Potter and the Philosopher's Stone (2001) and culminating with Harry Potter and the Deathly Hallows – Part 2 (2011). A spin-off prequel series that is planned to consist of five films started with Fantastic Beasts and Where to Find Them (2016), marking the beginning of the Wizarding World shared media franchise.",
+  _id: new ObjectId("62e4dba884e80c443179217d"),
+  __v: 0
+}
+New Character: {
+  name: 'Batman',
+  description: "Batman is the superhero protector of Gotham City, a tortured, brooding vigilante dressed as a bat who fights against evil and strikes fear into the hearts of criminals everywhere. In his public identity he is Bruce Wayne, billionaire industrialist and notorious playboy. Although he has no superhuman abilities, he is one of the world's smartest men and greatest fighters. His physical prowess, technical ingenuity, and tactical thinking make him an incredibly dangerous opponent. He is also a founding member of the Justice League.",
+  image: new ObjectId("62e43ce80fa1510348453b06"),
+  category: [
+    {
+      name: 'DC Comics',
+      description: 'DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, Wonder Woman, and Aquaman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.',
+      _id: new ObjectId("62e4dba584e80c4431792176"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba884e80c443179217f"),
+  __v: 0
+}
+New Character: {
+  name: 'Iron Man',
+  description: "Tony Stark is a genius inventor and billionaire industrialist, who suits up in his armor of cutting-edge technology to become the super hero Iron Man. The adopted son of weapons manufacturer Howard StarkTony inherited his family's company at a young age following his parents' death. While overseeing a manufacturing plant in a foreign country, Stark was kidnapped by local terrorists. Instead of giving in to his captors' demands to build weapons for them, Stark created a powerful suit of armor for himself to escape. Returning to America, Stark further upgraded the armor and put his vast resources and intellect to use for the betterment of the world as Iron Man.",
+  image: new ObjectId("62e43d550fa1510348453b0a"),
+  category: [
+    {
+      name: 'Marvel',
+      description: 'Marvel Studios, LLC[4] (originally known as Marvel Films from 1993 to 1996) is an American film and television production company that is a subsidiary of Walt Disney Studios, a division of the Walt Disney Company. Marvel Studios is known for the production of the Marvel Cinematic Universe films, based on characters that appear in Marvel Comics publications.',
+      _id: new ObjectId("62e4dba784e80c4431792179"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba884e80c4431792181"),
+  __v: 0
+}
+New Character: {
+  name: 'Optimus Prime',
+  description: 'Optimus Prime is the main character of Transformers: Prime and the official leader of the Autobots during the war on Cybertron, as well as the leader of Team Prime. Before the Great War, Optimus Prime was originally known as Orion Pax; a young data clerk who worked in Iacon, under the wing of Alpha Trion. Alpha Trion was a mentor to Orion Pax and believed in Orion to become the next Prime. Orion Pax was chosen by the High Council and became "Optimus Prime," upon being entrusted with the Matrix of Leadership by Primus himself. Years of war against his old friend/rival, Megatron, have brought Optimus and his team to Earth. On Earth, Optimus fights with his team to survive and to end the brutal war against their enemies, once and for all.',
+  image: new ObjectId("62e43d780fa1510348453b0e"),
+  category: [
+    {
+      name: 'Transformers',
+      description: 'Transformers is a series of American science fiction action films based on the Transformers franchise, which began in the 1980s.',
+      _id: new ObjectId("62e4dba884e80c443179217b"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba884e80c4431792182"),
+  __v: 0
+}
+New Character: {
+  name: 'Superman',
+  description: "Superman (born Kal-El, legal name Clark Kent) is the last son of Krypton, sent as the dying planet's last hope to Earth, where he grew to become its kind, noble protector. Though he was apparently killed shortly after the Darkseid War, his essence merged with the New Earth Superman in Rebirth, creating a new, merged timeline for Superman. He is also a founding member of the Justice League.",
+  image: new ObjectId("62e43d910fa1510348453b16"),
+  category: [
+    {
+      name: 'DC Comics',
+      description: 'DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, Wonder Woman, and Aquaman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.',
+      _id: new ObjectId("62e4dba584e80c4431792176"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba884e80c4431792180"),
+  __v: 0
+}
+New Product: {
+  name: 'Superman Amazing Yamaguchi',
+  description: "The one and only - Superman!, Based on his appearance in DC Comics' The New 52 series, 7-inches tall, The Man of Steel includes 4 alternate heads and 8 interchangeable hands!, Incredibly poseable, he comes with a figure stand.",
+  price: 59,
+  item_available_count: 8,
+  image: new ObjectId("62e440243e90e512960f3c1c"),
+  category: [
+    {
+      name: 'DC Comics',
+      description: 'DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, Wonder Woman, and Aquaman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.',
+      _id: new ObjectId("62e4dba584e80c4431792176"),
+      __v: 0
+    }
+  ],
+  character: [
+    {
+      name: 'Iron Man',
+      description: "Tony Stark is a genius inventor and billionaire industrialist, who suits up in his armor of cutting-edge technology to become the super hero Iron Man. The adopted son of weapons manufacturer Howard StarkTony inherited his family's company at a young age following his parents' death. While overseeing a manufacturing plant in a foreign country, Stark was kidnapped by local terrorists. Instead of giving in to his captors' demands to build weapons for them, Stark created a powerful suit of armor for himself to escape. Returning to America, Stark further upgraded the armor and put his vast resources and intellect to use for the betterment of the world as Iron Man.",
+      image: new ObjectId("62e43d550fa1510348453b0a"),
+      category: [Array],
+      _id: new ObjectId("62e4dba884e80c4431792181"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba984e80c4431792188"),
+  __v: 0
+}
+New Product: {
+  name: 'Batman Classic',
+  description: 'Batman stands an impresive 20 inches tall, Batman comes complete with soft goods cape, 7 points of articulation, Perfect for kids and the kid at heart, For ages 3 and up',
+  price: 99,
+  item_available_count: 10,
+  image: new ObjectId("62e43fa63e90e512960f3c10"),
+  category: [
+    {
+      name: 'DC Comics',
+      description: 'DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, Wonder Woman, and Aquaman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.',
+      _id: new ObjectId("62e4dba584e80c4431792176"),
+      __v: 0
+    }
+  ],
+  character: [
+    {
+      name: 'Batman',
+      description: "Batman is the superhero protector of Gotham City, a tortured, brooding vigilante dressed as a bat who fights against evil and strikes fear into the hearts of criminals everywhere. In his public identity he is Bruce Wayne, billionaire industrialist and notorious playboy. Although he has no superhuman abilities, he is one of the world's smartest men and greatest fighters. His physical prowess, technical ingenuity, and tactical thinking make him an incredibly dangerous opponent. He is also a founding member of the Justice League.",
+      image: new ObjectId("62e43ce80fa1510348453b06"),
+      category: [Array],
+      _id: new ObjectId("62e4dba884e80c443179217f"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba984e80c4431792187"),
+  __v: 0
+}
+New Product: {
+  name: 'Masters of the Universe Masterverse He-Man 40th Anniversary Action Figure',
+  description: 'By the Power of Grayskull! Celebrate your love for He-Man by adding this remarkable Masters of the Universe Masterverse He-Man 40th Anniversary Action Figure to your toy box or collection shelf. This vintage-style He-Man stands roughly 7-inches tall in all his glory, and he features 30 points of articulation and comes with a power sword, a shield, an axe, and a pair of swappable hands. Ages 6 and up.',
+  price: 99,
+  item_available_count: 24,
+  image: new ObjectId("62e43fff3e90e512960f3c14"),
+  category: [],
+  character: [],
+  _id: new ObjectId("62e4dba984e80c4431792189"),
+  __v: 0
+}
+New Product: {
+  name: 'Superman Rebirth',
+  description: 'The Superman: Rebirth Superman Page Punchers 3-Inch Scale Action Figure features 5 points of articulation for kicking and punching motion, and comes with a DC Universe Rebirth Superman #1 comic book that can be resealed in the clamshell blister packaging.',
+  price: 69,
+  item_available_count: 12,
+  image: new ObjectId("62e440313e90e512960f3c20"),
+  category: [
+    {
+      name: 'DC Comics',
+      description: 'DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, Wonder Woman, and Aquaman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.',
+      _id: new ObjectId("62e4dba584e80c4431792176"),
+      __v: 0
+    }
+  ],
+  character: [
+    {
+      name: 'Iron Man',
+      description: "Tony Stark is a genius inventor and billionaire industrialist, who suits up in his armor of cutting-edge technology to become the super hero Iron Man. The adopted son of weapons manufacturer Howard StarkTony inherited his family's company at a young age following his parents' death. While overseeing a manufacturing plant in a foreign country, Stark was kidnapped by local terrorists. Instead of giving in to his captors' demands to build weapons for them, Stark created a powerful suit of armor for himself to escape. Returning to America, Stark further upgraded the armor and put his vast resources and intellect to use for the betterment of the world as Iron Man.",
+      image: new ObjectId("62e43d550fa1510348453b0a"),
+      category: [Array],
+      _id: new ObjectId("62e4dba884e80c4431792181"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba984e80c443179218a"),
+  __v: 0
+}
+Products: {
+  name: 'Superman Amazing Yamaguchi',
+  description: "The one and only - Superman!, Based on his appearance in DC Comics' The New 52 series, 7-inches tall, The Man of Steel includes 4 alternate heads and 8 interchangeable hands!, Incredibly poseable, he comes with a figure stand.",
+  price: 59,
+  item_available_count: 8,
+  image: new ObjectId("62e440243e90e512960f3c1c"),
+  category: [
+    {
+      name: 'DC Comics',
+      description: 'DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, Wonder Woman, and Aquaman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.',
+      _id: new ObjectId("62e4dba584e80c4431792176"),
+      __v: 0
+    }
+  ],
+  character: [
+    {
+      name: 'Iron Man',
+      description: "Tony Stark is a genius inventor and billionaire industrialist, who suits up in his armor of cutting-edge technology to become the super hero Iron Man. The adopted son of weapons manufacturer Howard StarkTony inherited his family's company at a young age following his parents' death. While overseeing a manufacturing plant in a foreign country, Stark was kidnapped by local terrorists. Instead of giving in to his captors' demands to build weapons for them, Stark created a powerful suit of armor for himself to escape. Returning to America, Stark further upgraded the armor and put his vast resources and intellect to use for the betterment of the world as Iron Man.",
+      image: new ObjectId("62e43d550fa1510348453b0a"),
+      category: [Array],
+      _id: new ObjectId("62e4dba884e80c4431792181"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba984e80c4431792188"),
+  __v: 0
+},{
+  name: 'Batman Classic',
+  description: 'Batman stands an impresive 20 inches tall, Batman comes complete with soft goods cape, 7 points of articulation, Perfect for kids and the kid at heart, For ages 3 and up',
+  price: 99,
+  item_available_count: 10,
+  image: new ObjectId("62e43fa63e90e512960f3c10"),
+  category: [
+    {
+      name: 'DC Comics',
+      description: 'DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, Wonder Woman, and Aquaman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.',
+      _id: new ObjectId("62e4dba584e80c4431792176"),
+      __v: 0
+    }
+  ],
+  character: [
+    {
+      name: 'Batman',
+      description: "Batman is the superhero protector of Gotham City, a tortured, brooding vigilante dressed as a bat who fights against evil and strikes fear into the hearts of criminals everywhere. In his public identity he is Bruce Wayne, billionaire industrialist and notorious playboy. Although he has no superhuman abilities, he is one of the world's smartest men and greatest fighters. His physical prowess, technical ingenuity, and tactical thinking make him an incredibly dangerous opponent. He is also a founding member of the Justice League.",
+      image: new ObjectId("62e43ce80fa1510348453b06"),
+      category: [Array],
+      _id: new ObjectId("62e4dba884e80c443179217f"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba984e80c4431792187"),
+  __v: 0
+},{
+  name: 'Masters of the Universe Masterverse He-Man 40th Anniversary Action Figure',
+  description: 'By the Power of Grayskull! Celebrate your love for He-Man by adding this remarkable Masters of the Universe Masterverse He-Man 40th Anniversary Action Figure to your toy box or collection shelf. This vintage-style He-Man stands roughly 7-inches tall in all his glory, and he features 30 points of articulation and comes with a power sword, a shield, an axe, and a pair of swappable hands. Ages 6 and up.',
+  price: 99,
+  item_available_count: 24,
+  image: new ObjectId("62e43fff3e90e512960f3c14"),
+  category: [],
+  character: [],
+  _id: new ObjectId("62e4dba984e80c4431792189"),
+  __v: 0
+},{
+  name: 'Superman Rebirth',
+  description: 'The Superman: Rebirth Superman Page Punchers 3-Inch Scale Action Figure features 5 points of articulation for kicking and punching motion, and comes with a DC Universe Rebirth Superman #1 comic book that can be resealed in the clamshell blister packaging.',
+  price: 69,
+  item_available_count: 12,
+  image: new ObjectId("62e440313e90e512960f3c20"),
+  category: [
+    {
+      name: 'DC Comics',
+      description: 'DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, Wonder Woman, and Aquaman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.',
+      _id: new ObjectId("62e4dba584e80c4431792176"),
+      __v: 0
+    }
+  ],
+  character: [
+    {
+      name: 'Iron Man',
+      description: "Tony Stark is a genius inventor and billionaire industrialist, who suits up in his armor of cutting-edge technology to become the super hero Iron Man. The adopted son of weapons manufacturer Howard StarkTony inherited his family's company at a young age following his parents' death. While overseeing a manufacturing plant in a foreign country, Stark was kidnapped by local terrorists. Instead of giving in to his captors' demands to build weapons for them, Stark created a powerful suit of armor for himself to escape. Returning to America, Stark further upgraded the armor and put his vast resources and intellect to use for the betterment of the world as Iron Man.",
+      image: new ObjectId("62e43d550fa1510348453b0a"),
+      category: [Array],
+      _id: new ObjectId("62e4dba884e80c4431792181"),
+      __v: 0
+    }
+  ],
+  _id: new ObjectId("62e4dba984e80c443179218a"),
+  __v: 0
+}
+
+[1]+  Done                    node populatedb mongodb+srv://toystoreAdmin:RdfmQD1wzNlsZd0I@cluster0.5ffxhgb.mongodb.net/inventory?retryWrites=true
