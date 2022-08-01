@@ -28,6 +28,8 @@ router.get('/categories', category_controller.category_list_get);
 
 router.get('/category/:id', category_controller.category_detail_get);
 
+// router.get('/character-category/:id', character_controller.get_character_category);
+
 router.get('/category/create', category_controller.category_create_get);
 
 router.post('/category/create', category_controller.category_create_post);

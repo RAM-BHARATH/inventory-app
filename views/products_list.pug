@@ -1,0 +1,27 @@
+extend layout
+
+block content
+    .container
+        .row
+            h1= title
+    if error 
+        p Error in fetching data
+    else 
+        if products 
+                for product in products
+                    .container
+                        a(href=product.url) #{product.name}
+                            .col-md-6
+                                img(src='/image/id/'+product.image, width='200')
+                            .row
+                                .col-md-6.flex.justify-between
+                                    span $#{product.price}  
+                                    button(type="button") Buy 
+                        //- ul
+                        //-     for character in product.character
+                        //-         li
+                        //-             a(href=character.url) #{character.name}
+                        //- ul
+                        //-     for category in product.category
+                        //-         li
+                        //-             a(href=category.url) #{category.name}

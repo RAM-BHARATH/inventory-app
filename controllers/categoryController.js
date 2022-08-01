@@ -3,6 +3,7 @@ const Character = require('../models/character')
 const async = require('async')
 const Product = require('../models/product')
 
+
 exports.category_list_get = function(req, res, next){
     Category.find({})
         .sort({ title:1 })

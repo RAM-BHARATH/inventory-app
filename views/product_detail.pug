@@ -1,0 +1,11 @@
+extend layout 
+
+block content 
+    h1= title 
+        .container
+            .row.col-md-6 
+                img(src='/image/id/'+product.image)
+                span.text-secondary Price:$#{product.price} |   
+                span In-stock: #{product.item_available_count}
+            p= product.description
+            

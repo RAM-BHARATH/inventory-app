@@ -1,26 +1,35 @@
 extends layout 
-
-block content 
-    h1= title
-    ul
-        each val, index in character 
-            if(typeof val !='function')
-                li #{index}, #{val}
-        //- li Image: #{character.image}
-        li= character.description
-        li= character.category
-        p= character
-    //- p= response
-    //- ul
-    //-     each val, index in image
-    //-         if(typeof val !='function')
-    //-             li #{index}
-    //- p= image
-    img(src='/image/'+image.filename)
-
-    h1 Products
-    ul 
-        each product in products
-            li
-                a(href=product.url) #{product.name}
+block head_extra 
+    link(rel="stylesheet", href="/stylesheets/character_detail.css")
+block content
+    .container 
+        .row
+            h1= title
+            .container
+                .row
+                    each category in character.category
+                        a(href=category.url) #{category.name}
+            .container 
+                .row
+                    //- li Image: #{character.image}
+                    ul
+                        li= character.description
+                    //- li= character.category
+                    //- p= character
+            //- p= response
+            //- ul
+            //-     each val, index in image
+            //-         if(typeof val !='function')
+            //-             li #{index}
+            //- p= image
+        .row
+            img(src='/image/'+image.filename, width="200")
+        .row
+            .container
+                h1 Products
+                ul 
+                    each product in products
+                        .row
+                        li
+                            a(href=product.url) #{product.name}
         

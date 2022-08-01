@@ -11,6 +11,7 @@ const { Readable } = require('stream')
 const mongodb = require('mongodb')
 const mongoose = require('mongoose')
 const Grid = require('gridfs-stream')
+const ObjectId = mongodb.ObjectId;
 
 const async = require('async')
 const { json } = require('body-parser')
@@ -18,9 +19,10 @@ const { json } = require('body-parser')
 let mongoDBURI = process.env.MONGODB_URI;
 mongoose.connect(mongoDBURI, { useNewUrlParser: true , useUnifiedTopology: true})
 let db = mongoose.connection;
+let db2 = mongoose.connection;
 // db.on('error', console.error.bind(console, 'MongoDB connection error'));
 
-let gfs, gridfsbucket;
+let gfs, gfs2, gridfsbucket, gridfsbucket2;
 
 db.once('open',()=>{
     gridfsBucket = new mongoose.mongo.GridFSBucket(db,{
@@ -29,10 +31,16 @@ db.once('open',()=>{
     
     gfs = Grid(db, mongoose.mongo);
     gfs.collection('character_uploads');
-
 })
 
+db2.once('open',()=>{
+    gridfsbucket2 = new mongoose.mongo.GridFSBucket(db2,{
+        bucketName: 'product_uploads'
+    });
 
+    gfs2= Grid(db, mongoose.mongo);
+    gfs2.collection('product_uploads');
+})
 
 exports.character_list_get = function(req,res){
     Character.find({})
@@ -80,7 +88,7 @@ exports.character_detail_get = function(req,res, next){
         // }
         
         character(callback){
-            Character.findById(req.params.id).exec(callback)
+            Character.findById(req.params.id).populate('category').exec(callback)
         },
         products(callback){
             Product.find({ character: req.params.id }).exec(callback)
@@ -93,7 +101,7 @@ exports.character_detail_get = function(req,res, next){
             err.status = 404
             return next(err)
         }
-        await gfs.files.findOne({_id:results.character.image}, (err, file)=>{
+        await gfs.files.findOne({_id:results.character.image}, async (err, file)=>{
             if(!file){
                 console.log('NO');
                 return new Error('Image does not exist');
@@ -187,3 +195,37 @@ exports.get_image = function(req, res){
         }
     })
 }
+
+exports.get_image_from_id = async function(req, res){
+    // console.log(typeof req.params.id)
+    await gfs2.files.findOne({_id: new ObjectId(req.params.id)}, function(err, file){
+        if(!file || file.length==0 ){
+            return res.status(404).json({
+                err:'No file exists'
+            })
+        }
+        console.log(file)
+        if(file.contentType==='image/jpeg'||file.contentType==='image/png'){
+            // Read output to browser
+            const readstream = gridfsbucket2.openDownloadStream(file._id);
+            readstream.pipe(res);
+        }else{
+            return res.status(404).json({
+                err:'Not an image'
+            })
+        }
+    })
+}
+
+// async function get_character_category(category_id){
+//     Category.findOne({_id: category_id}, (err, category)=>{
+//         if(!category || category.length==0){
+//             return res.status(404).json({
+//                 err: 'Category does not exist'
+//             })
+//         }else{
+//             console.log(category)
+//             return category
+//         }
+//     })
+// }
