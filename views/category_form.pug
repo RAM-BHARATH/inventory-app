@@ -1,0 +1,16 @@
+extend layout 
+
+block content 
+    .container 
+        .row
+            h1= title
+    .container
+        form(action="", method="POST")
+            .form-group
+                label(for="category_name") Name
+                input(type="text", name="category_name",id="category_name")
+            .form-group
+                label(for="category_description") Description
+                input(type="text", name="category_description", id="category_description")
+            .form-group
+                input(type="submit", value="Submit")

@@ -1,0 +1,25 @@
+extend layout 
+
+block content 
+    .container 
+        .row
+            h1= title
+    .container 
+        form(action="", method="POST")
+            .form-group
+                label(for="character_name") Name
+                input(type="text", name="character_name",id="character_name")
+            .form-group
+                label(for="character_description") Description
+                input(type="text", name="character_description", id="character_description")
+            .form-group
+                label(for="character_image") Image 
+                input(type="file", name="character_image", id="character_image")
+            .form-group
+                label(for="character_categories") Category(ies)
+                for category in categories 
+                    div(style='display: inline; padding-right:10px;')
+                        input.checkbox-input(type='checkbox', name='category', id=category._id, value=category._id, checked=category.checked )
+                        label(for=category._id) #{category.name}
+            .form-group
+                input(type="submit", value="Submit")

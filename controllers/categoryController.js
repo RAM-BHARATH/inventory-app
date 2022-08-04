@@ -13,7 +13,7 @@ exports.category_list_get = function(req, res, next){
         });
 }
 
-exports.category_detail_get = function(req,res){
+exports.category_detail_get = function(req, res, next){
     async.parallel({
         category(callback){
             Category.findById(req.params.id)
@@ -41,7 +41,7 @@ exports.category_detail_get = function(req,res){
 }
 
 exports.category_create_get = function(req,res){
-    res.json({info:"To be implemented"})
+    res.render('category_form', { title: 'Create Category' })
 }
 
 exports.category_create_post = function(req,res){

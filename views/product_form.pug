@@ -1,0 +1,38 @@
+extend layout 
+
+block content 
+    .container 
+        .row
+            h1= title
+    .container 
+        form(action="", method="POST")
+            .form-group
+                label(for="product_name") Name
+                input(type="text", name="product_name",id="product_name")
+            .form-group
+                label(for="product_description") Description
+                input(type="text", name="product_description", id="product_description")
+            .form-group
+                label(for="product_image") Image 
+                input(type="file", name="product_image", id="product_image")
+            .form-group
+                label(for="product_categories") Category(ies)
+                for category in categories 
+                    div(style='display: inline; padding-right:10px;')
+                        input.checkbox-input(type='checkbox', name='category', id=category._id, value=category._id, checked=category.checked, onclick='myBlah(' + '"'+ category._id +'")')  
+                        //-onclick='updateCharactersForCategory('+category._id+')' 
+                        label(for=category._id) #{category.name}
+            .form-group#character-input
+                label(for="product_characters") Character(s)
+                //- for character in characters
+                //-     //- if()
+                //-     div(style='display: inline; padding-right:10px;', id='chracters-div')
+                //-         input.checkbox-input(type='checkbox', name='character', id=character._id, value=character._id, checked=character.checked )
+                //-         label(for=character._id) #{character.name}
+            #div1
+                //- for character in 
+
+            .form-group
+                input(type="submit", value="Submit")
+
+    script(src='/javascripts/product_form.js')

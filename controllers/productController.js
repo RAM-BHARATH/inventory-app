@@ -1,4 +1,4 @@
-const Character = require('../models/category')
+const Character = require('../models/character')
 const Category = require('../models/category')
 const Product = require('../models/product')
 
@@ -52,8 +52,23 @@ exports.product_detail_get = function(req, res, next){
     })
 }
 
-exports.product_create_get = function(req,res){
-    res.json({info:"To be implemented"})
+exports.product_create_get = function( req, res, next ){
+    async.parallel({
+        categories(callback){
+            Category.find({}).exec(callback)
+        },
+        characters(callback){
+            Character.find({}).exec(callback)
+        }
+    }, function(err, results){
+        if(err) return next(err);
+        if(!results || results.length==0){
+            let err = new Error('Error in fetching character and category')
+            err.status = 404
+            return next(err)
+        }
+        res.render('product_form', { title: "Create Product", categories: results.categories, characters: results.characters })
+    })
 }
 
 exports.product_create_post = function(req,res){

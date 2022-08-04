@@ -153,8 +153,16 @@ exports.character_detail_get = function(req,res, next){
     // })
 }
 
-exports.character_create_get = function(req,res){
-    res.json({info:"To be implemented"})
+exports.character_create_get = function(req, res, next){
+    Category.find({}).exec(function(err, categories){
+        if(err) return next(err)
+        if(!categories || categories.length==0){
+            let err = new Error('No category found')
+            err.status=404
+            return next(err)
+        }
+        res.render('character_form', { title: "Create Character", categories: categories });
+    })
 }
 
 exports.character_create_post = function(req,res){
@@ -229,3 +237,13 @@ exports.get_image_from_id = async function(req, res){
 //         }
 //     })
 // }
+
+exports.get_category_characters = function(req, res, next){
+    Character.find({ category: req.params.id })
+    .populate('category').exec(function(err, characters){
+        if(err){
+            return next(err)
+        }
+       res.json({characters: characters}) 
+    })
+}
