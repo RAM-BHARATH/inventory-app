@@ -1,0 +1,39 @@
+extend layout 
+
+block content
+    h1 #{title}: #{category.name}
+    
+    if characters.length 
+        p Characters available:  characters.length
+
+        p #[strong Delete the following characters before attempting to delete this category.]
+
+        div(style='margin-left:20px;margin-top:20px')
+
+            h4 Book Instances
+
+            dl
+            each book_instance in book_instances
+                dt
+                a(href=book_instance.url) #{book.title}
+                dd Imprint: #{book_instance.imprint}
+                p #[strong Status:]
+                    if book_instance.status=='Available'
+                        span.text-success #{book_instance.status}
+                    else if book_instance.status=='Maintenance'
+                        span.text-danger #{book_instance.status}
+                    else
+                        span.text-warning #{book_instance.status}
+
+                if book_instance.status!='Available'
+                    p #[strong Due back:] #{book_instance.due_back_formatted}
+
+    else
+        p Do you really want to delete this Book?
+
+        form(method='POST' action='')
+        div.form-group
+            input#category_name
+            input#categoryid.form-control(type='hidden',name='categoryid', required='true', value=category._id )
+        
+        button.btn.btn-danger(type='submit') Delete

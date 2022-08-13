@@ -4,6 +4,11 @@ block content
     .container 
         .row 
             h1= title
+        .row 
+            .col-md-2
+                a(href=category.url+'/update') Update Category
+            .col-md-2
+                a(href=category.url+'/delete') Delete Category 
     .container 
         .row
             if error 

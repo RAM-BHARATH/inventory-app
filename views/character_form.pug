@@ -23,3 +23,8 @@ block content
                         label(for=category._id) #{category.name}
             .form-group
                 input(type="submit", value="Submit")
+    
+    if errors
+        ul
+            for error in errors
+                li= error.msg

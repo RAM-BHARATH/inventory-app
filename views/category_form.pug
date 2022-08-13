@@ -6,11 +6,18 @@ block content
             h1= title
     .container
         form(action="", method="POST")
+            //- .form-group 
+            //-     p= category.id 
             .form-group
                 label(for="category_name") Name
-                input(type="text", name="category_name",id="category_name")
+                input(type="text", name="category_name",id="category_name" value=(undefined===category?'':category.name))
             .form-group
                 label(for="category_description") Description
-                input(type="text", name="category_description", id="category_description")
+                textarea(name="category_description", cols="30", rows="5") #{undefined===category?'':category.description}
             .form-group
                 input(type="submit", value="Submit")
+
+    if errors
+        ul
+            for error in errors
+                li= error.msg

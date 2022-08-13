@@ -1,4 +1,4 @@
-extend layout 
+extend product_create_form_layout 
 
 block content 
     .container 
@@ -14,7 +14,7 @@ block content
                 input(type="text", name="product_description", id="product_description")
             .form-group
                 label(for="product_image") Image 
-                input(type="file", name="product_image", id="product_image")
+                input(type="file", name="product_image", id="product_image" enctype="multipart/form-data" accept="image/png, image/jpeg, image/jpg")
             .form-group
                 label(for="product_categories") Category(ies)
                 for category in categories 
